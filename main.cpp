@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include <map>
+#include <iterator>
 using namespace std;
 typedef struct
 {
@@ -10,10 +11,54 @@ typedef struct
 class Post
 {
 private:
-    int ID;
-    static int Effectif;
-    static int Min_Effectif;
+    string Nom;
+    static map<string, int> Effectif;
+    static map<string, int> Min_Effectif;
+
+public:
+    Post(string nom, int min_eff)
+    {
+        Nom = nom;
+
+        if (Effectif.find(Nom) == Effectif.end())
+        {
+            Effectif[Nom] = 1;
+            Min_Effectif[Nom] = min_eff;
+        }
+    }
+    ~Post()
+    {
+        Effectif[Nom]--;
+    }
+    static bool verif(string name)
+    {
+        if (Effectif.find(name) != Effectif.end())
+        {
+            return true;
+        }
+        if (Effectif.find(name) == Effectif.end())
+        {
+            return false;
+        }
+    }
+    static void increment(string Nom)
+    {
+        if (Effectif.find(Nom) != Effectif.end())
+        {
+            Effectif[Nom]++;
+        }
+    }
+    static void decrement(string Nom)
+    {
+        if (Effectif.find(Nom) != Effectif.end())
+        {
+            Effectif[Nom]++;
+        }
+    }
 };
+map<string, int> Post::Effectif = {};
+map<string, int> Post::Min_Effectif = {};
+
 class Personne
 {
 private:
@@ -118,6 +163,21 @@ public:
         Filiale = fil;
         Status = stat;
         Poste = pos;
+        if (Post::verif(pos))
+        {
+            Post::increment(pos);
+        }
+        else
+        {
+            cout << "donner l'eefectif minimal de cette poste" << endl;
+            int x;
+            cin >> x;
+            Post Postex = Post(Poste, x);
+        }
+    }
+    ~Employe()
+    {
+        Post::decrement(Poste);
     }
 };
 class Liste_employe
@@ -305,6 +365,7 @@ public:
 int main(int argc, const char **argv)
 {
     Personne e(14, "fa", "fg");
+    Post p("fg", {});
 
     cout << e.GetID();
 
