@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1587823497 source:c:\users\omaima\desktop\essai2p\main.cpp
+	<iostream>
+	<fstream>
+	<bits/stdc++.h>
+
+1587903181 source:d:\ensi\2ème-semestre\projet\essai2p\essai2p\main.cpp
+	<iostream>
+	<bits/stdc++.h>
+	"congebase.h"
+	"fct.h"
+
+1587898678 d:\ensi\2ème-semestre\projet\essai2p\essai2p\congebase.h
+	<bits/stdc++.h>
+
+1587903021 d:\ensi\2ème-semestre\projet\essai2p\essai2p\fct.h
+	<bits/stdc++.h>
+
