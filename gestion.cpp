@@ -104,7 +104,7 @@ public:
     {
         if (Effectif.find(Nom) != Effectif.end())
         {
-            Effectif[Nom]++;
+            Effectif[Nom]--;
         }
     }
 };
@@ -126,7 +126,7 @@ public:
 
     void SetID(int ID)
     {
-        ID = ID;
+        this.ID = ID;
     }
 
     string GetNom() const
@@ -134,9 +134,9 @@ public:
         return Nom;
     }
 
-    void SetNom(string Nom)
+    void SetNom(string nom)
     {
-        Nom = Nom;
+        Nom = nom;
     }
 
     string GetPrenom() const
@@ -146,7 +146,7 @@ public:
 
     void SetPrenom(string Prenom)
     {
-        Prenom = Prenom;
+        this.Prenom = Prenom;
     }
 
     Personne(int n, string nom, string prenom)
@@ -174,9 +174,9 @@ public:
         return MDP;
     }
 
-    void SetMDP(int MDP)
+    void SetMDP(int mdp)
     {
-        MDP = MDP;
+        MDP = mdp;
     }
 
     int GetFiliale() const
@@ -184,9 +184,9 @@ public:
         return Filiale;
     }
 
-    void SetFiliale(int Filiale)
+    void SetFiliale(int Fili)
     {
-        Filiale = Filiale;
+        Filiale = Fili;
     }
 
     int GetStatus() const
@@ -194,9 +194,9 @@ public:
         return Status;
     }
 
-    void SetStatus(int Status)
+    void SetStatus(int Stat)
     {
-        Status = Status;
+        Status = Stat;
     }
 
     string GetPoste() const
@@ -204,9 +204,9 @@ public:
         return Poste;
     }
 
-    void SetPoste(string Poste)
+    void SetPoste(string poste)
     {
-        Poste = Poste;
+        Poste = poste;
     }
 
     Employe(int n, string nom, string prenom, int mdp, int fil, int stat, string pos) : Personne(n, nom, prenom)
@@ -487,7 +487,7 @@ Liste_Conge deposer(void)
 int main(int argc, const char **argv)
 {
     deposer();
-    cout << "5dem bb";
+    cout << "bien effectue";
 
     return 0;
 }
