@@ -49,7 +49,7 @@ do
             }
             else{
                 cout<<"informations valides"<<endl;
-                //affichage de la liste des congés
+                //affichage de la liste des congÃ©s
             }
             }
             break;
