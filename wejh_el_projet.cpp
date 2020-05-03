@@ -41,16 +41,20 @@ do
             else{
                 cout<<"saisir votre mot de passe\n";
                 cin>>mdp;
-            if(mdp!=MDP){
-                while(lim!=0 && mdp!=MDP)
-                cout<<"resaisir votre mot de passe nbre d'esssai est" <<lim<<"\n";
+                while(lim!=0 && mdp!=MDP){
+                        system("color 4F");
+                cout<<"resaisir votre mot de passe il vous reste *" <<lim<<"* essais\n"<<endl;
                 cin>>mdp;
                 lim--;
+
             }
-            else{
-                cout<<"informations valides"<<endl;
+            if(lim==0){
+                cout<<"nombre d'essai depasse saisir R pour retouner  ";
+                cin>>choix;
+            }
+
+            else{cout<<"informations valides"<<endl;}
                 //affichage de la liste des congés
-            }
             }
             break;
 //*************************************************************************************************
@@ -60,7 +64,7 @@ do
         cin>>id;
         if(true/* fct verif de id*/){
             system("cls");
-            cout<<"Bienvenue sur l'espace employes et conges veuillez saisir votre chois"<<endl;
+            cout<<"Bienvenue sur l'espace employes et conges veuillez saisir votre choix"<<endl;
 
             cout<<"\n\t\t\t\tMENU\n";
 	        cout<<"\t\t*************************\n";
@@ -88,7 +92,7 @@ do
         cout<<"\t\t\t\*travail fait par le groupe num 9 de II1F*"<<endl;
         cout<<"\n les membres sont:\n";
         cout<<"\t\tWissem Ayat\n\t\tRym Oualha\n\t\tJawhar Mallek\n\t\tOmaima Younsi\n";
-        cout<<"\n\n\n\n pour retouner au menu taper sur le clavier \n";
+        cout<<"\n\n\n\n pour retouner au menu principale taper R \n";
         cin>>tap;
 
 		}
